@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    <div className="App"><h1>Covid-19 Tracker GoogleMap</h1></div>
+    <br/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
