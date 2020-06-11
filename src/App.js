@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 // import MapContainer from './MapContainer';
 import GoogleMapReact from 'google-map-react';
 
 function App() {
-  const [latest,setlatest]=useState([]);
   const [result,setResults]=useState([]);
 
   useEffect(()=>{
@@ -16,7 +14,6 @@ function App() {
         axios.get("https://corona.lmao.ninja/v2/countries"),
       ])
       .then((ResponseArr)=>{
-        setlatest(ResponseArr[0].data)
         setResults(ResponseArr[1].data)
         console.log(ResponseArr[0].data);
       })
@@ -24,8 +21,6 @@ function App() {
         console.log(err);
       });
   },[]);
-    const date = new Date(parseInt(latest.updated));
-    const lastUpadte =date.toString();
 
     const countriesLocation =result.map((data,i)=>{
     return (
@@ -41,7 +36,7 @@ function App() {
             borderRadius:"30%",
           }}
         >
-          <img height="20" src={data.countryInfo.flag}/><br/>
+          <img height="20" src={data.countryInfo.flag} alt="flag"/><br/>
           {data.cases}
         </div>
       )

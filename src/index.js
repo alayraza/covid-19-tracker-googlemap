@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="App"><h1>Covid-19 Tracker GoogleMap</h1></div>
+    <div className="App"><h1>Covid-19 Tracker GoogleMap</h1><br/><h3>Note: if flags is not load please wait 2-3sec and refresh page again because of api limit</h3></div>
     <br/>
     <App />
   </React.StrictMode>,
